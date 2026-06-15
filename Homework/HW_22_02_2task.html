@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Список моїх справ</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    margin-left: 40px;
+    text-align: center;
+}
+
+ul {
+    width: 350px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+li {
+    padding: 12px;
+    position: relative;
+}
+
+li:nth-child(odd) {
+    background: #cdeef8;
+}
+
+li:nth-child(even) {
+    background: #b4ddea;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.icon {
+    margin-right: 15px;
+}
+
+.delete {
+    color: red;
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<h1>Список моїх справ</h1>
+
+<ul>
+    <li>
+        <span class="icon">☐</span>
+        Піти на тренування у спортзал
+        <span class="delete">×</span>
+    </li>
+
+    <li class="done">
+        <span class="icon">☑</span>
+        Оплатити рахунки за ЖКГ
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Зустріти Джона
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Купити яйця
+        <span class="delete">×</span>
+    </li>
+
+    <li class="done">
+        <span class="icon">☑</span>
+        Прочитати книгу
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Організувати кабінет
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Пообідати
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Купити яблука
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Зустріти Джорджа
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Нагодувати кота
+        <span class="delete">×</span>
+    </li>
+
+    <li class="done">
+        <span class="icon">☑</span>
+        Написати листа
+        <span class="delete">×</span>
+    </li>
+
+    <li>
+        <span class="icon">☐</span>
+        Пробігти один кілометр
+        <span class="delete">×</span>
+    </li>
+</ul>
+
+</body>
+</html>
