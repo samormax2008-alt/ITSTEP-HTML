@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семантичне плаваюче розміщення</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        header, nav, footer {
+            background-color: #6b1d42;
+            padding: 20px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .left-sidebar {
+            float: left;
+            width: 22%;
+        }
+        .left-sidebar aside {
+            background-color: #b85c84;
+            padding: 30px 15px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        main {
+            float: left;
+            width: 61%;
+            background-color: #b85c84;
+            margin: 0 1.5%;
+            padding: 20px;
+        }
+        main .main-title {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        section {
+            background-color: #da9fb6;
+            color: #6b1d42;
+            padding: 35px 15px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        section:last-child {
+            margin-bottom: 0;
+        }
+        .right-sidebar {
+            float: right;
+            width: 14%;
+            background-color: #b85c84;
+            padding: 40px 10px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        footer {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <header>ХЕДЕР</header>
+        
+        <nav>МЕНЮ</nav>
+
+        <div class="clearfix">
+            
+            <div class="left-sidebar">
+                <aside>ПРИМІТКА 1</aside>
+                <aside>ПРИМІТКА 2</aside>
+            </div>
+
+            <main>
+                <div class="main-title">ОСНОВНИЙ КОНТЕНТ</div>
+                <section>СЕКЦІЯ 1</section>
+                <section>СЕКЦІЯ 2</section>
+            </main>
+
+            <aside class="right-sidebar">
+                ПР<br>ИМ<br>ІТ<br>КА<br><br>3
+            </aside>
+
+        </div>
+
+        <footer>ФУТЕР</footer>
+
+    </div>
+
+</body>
+</html>

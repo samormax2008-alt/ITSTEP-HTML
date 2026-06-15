@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукти в холодильнику</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fdfdfd;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            width: 160px;
+            height: 160px;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .product-card img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            margin: 0;
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .footer-text {
+            margin-top: 40px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Що я маю в своєму холодильнику?</h1>
+
+    <div class="products-container">
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516069785199186036/Food_C247-128.png?ex=6a314d84&is=6a2ffc04&hm=2744afed3b7afbf64517adad3c879c18e7d564dcf1bebfcaeaf79d81586aa714&=&format=webp&quality=lossless&width=160&height=160" alt="Pepper">
+            <p>Перець</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516069674293530825/Food_C240-128.png?ex=6a314d69&is=6a2ffbe9&hm=90da23a3e3623b4bba05877cf2a1182cd9356bf04566e9b5990e0a8d1d2855f6&=&format=webp&quality=lossless&width=160&height=160" alt="Apple">
+            <p>Яблуко</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516069904346906624/Food_C217-128.png?ex=6a314da0&is=6a2ffc20&hm=ea0beb64bdd6fe1e7acb4bdf8bca7d02aae51f7ae490d4d127530a3164decaf9&=&format=webp&quality=lossless&width=160&height=160" alt="Cheese">
+            <p>Сир</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516070314201714728/Food_C245-128.png?ex=6a314e02&is=6a2ffc82&hm=a76c2f49a4b08b7e4a45fccded378389f35ed2813eb33a1588f92fbca55a40e9&=&format=webp&quality=lossless&width=160&height=160" alt="Corn">
+            <p>Кукурудза</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516070453100286074/Food_C239-128.png?ex=6a314e23&is=6a2ffca3&hm=3f59adbf68429cbac9ee610094f8dc86b9d135ec7ca434c5db420d53c71afdcd&=&format=webp&quality=lossless&width=160&height=160" alt="Mushroom">
+            <p>Гриби</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516071241486696649/Food_C238-128.png?ex=6a314edf&is=6a2ffd5f&hm=9250e1d47c3676f1923c06c59e6cb2ad7443cb11322b28a0280350194191192c&=&format=webp&quality=lossless&width=160&height=160" alt="Garlic">
+            <p>Цибуля</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516071486249500796/Food_C225-128.png?ex=6a314f19&is=6a2ffd99&hm=0a8e63bc0a80971593f4890b45533be97bd1c00d2421607d39fbc6047c7534e9&=&format=webp&quality=lossless&width=160&height=160" alt="Beef">
+            <p>М'ясо</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516071590427754616/Food_C205-128.png?ex=6a314f32&is=6a2ffdb2&hm=0dbc072173c4efd0f346817da9e348f4796dc45ebdbf5c030b978261f947c6c4&=&format=webp&quality=lossless&width=160&height=160" alt="Fish">
+            <p>Риба</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516071679594598461/Food_C203-128.png?ex=6a314f47&is=6a2ffdc7&hm=f7f3a180464993ce983f1270927397daca791bf4c8facfa5df84510e39e7529c&=&format=webp&quality=lossless&width=160&height=160" alt="Eggs">
+            <p>Яйця</p>
+        </div>
+        <div class="product-card">
+            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516071874600239124/Food_C235-128.png?ex=6a314f76&is=6a2ffdf6&hm=219c94f19241326ace9d46f449ab101e61b19d7d80e186abb9a33a22b6e283a9&=&format=webp&quality=lossless&width=160&height=160" alt="Coriander">
+            <p>Коріандр</p>
+        </div>
+    </div>
+
+    <div class="footer-text">... Це все ...</div>
+
+</body>
+</html>
