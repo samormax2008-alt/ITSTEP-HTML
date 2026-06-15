@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ефект наведення курсору</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: #eaeaea;
+            overflow: hidden;
+            border-bottom: 3px solid #ff9800;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333333;
+            color: #ffffff;
+            padding: 15px;
+            box-sizing: border-box;
+            border-top: 35px solid #ff9800;
+            transform: translateY(100%);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .overlay-title {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .overlay p {
+            margin: 0;
+            font-size: 12px;
+            line-height: 1.4;
+            color: #cccccc;
+        }
+
+        .card:hover .overlay {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery">
+        <div class="card">
+            <img src="https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png" alt="Зображення 1">
+            <div class="overlay">
+                <div class="overlay-title">HTML</div>
+                <p>HTML (HyperText Markup Language) - мова розмітки, яка використовується для структурування та відображення веб-сторінок у браузері. За її допомогою можна додавати заголовки, абзаци, списки, зображення, таблиці, форми та інші елементи інтерфейса...</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.freeiconspng.com/uploads/c--logo-icon-0.png" alt="Зображення 2">
+            <div class="overlay">
+                <div class="overlay-title">С++</div>
+                <p>С++ - компільована мова програмування високого рівня абстракції. Вона дозволяє розробляти ПЗ (що включає написання драйверів, операційних систем та компіляторів), створювати масштабовані та зрозумілі проєкти за допомогою об'єктів, класів, алгоримтів, наслідування...</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://repository-images.githubusercontent.com/406103374/c21b7307-3b9e-4add-b8c3-87d07e079772" alt="Зображення 3">
+            <div class="overlay">
+                <div class="overlay-title">Python</div>
+                <p>Python — це високорівнева мова програмування загального призначення, яка відома своєю простотою у використанні та зрозумілим синтаксисом. Вона була створена Гвідо ван Россумом у 1991 році і відтоді стала однією з найпопулярніших у світі завдяки своєму легкому навчальному порогу та широким можливостям...</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
