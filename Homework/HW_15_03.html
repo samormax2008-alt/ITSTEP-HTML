@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таблиця з фіксованими елементами</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+
+        div {
+            max-width: 600px;
+            max-height: 300px;
+            overflow: auto;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 800px;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 14px;
+            border: 1px solid #e0e0e0;
+        }
+
+        th {
+            background-color: #83c5be;
+            color: #333;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        tr td:first-child {
+            background-color: #a8dadc;
+            font-weight: bold;
+            color: #333;
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        tr th:first-child {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            background-color: #83c5be;
+        }
+
+        tr:nth-child(even) td:not(:first-child) {
+            background-color: #f1faee;
+        }
+
+        tr:nth-child(odd) td:not(:first-child) {
+            background-color: #ffffff;
+        }
+
+        tr:hover td:not(:first-child) {
+            background-color: #e63946;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Хедер 1</th>
+                    <th>Хедер 2</th>
+                    <th>Хедер 3</th>
+                    <th>Хедер 4</th>
+                    <th>Хедер 5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Лінія 1</td>
+                    <td>23</td>
+                    <td>123</td>
+                    <td>43</td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td>Лінія 2</td>
+                    <td>23</td>
+                    <td>123</td>
+                    <td>43</td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td>Лінія 3</td>
+                    <td>34</td>
+                    <td>63</td>
+                    <td>25</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Лінія 4</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Лінія 5</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Лінія 6</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Лінія 7</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                </tr>
+                <tr>
+                    <td>Лінія 8</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                    <td>23</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
