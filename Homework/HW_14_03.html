@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тарифні плани</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .pricing-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .card {
+            background-color: #ffffff;
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 0 0 25px 0;
+            overflow: hidden;
+            position: relative;
+            transition: transform 1s ease, box-shadow 1s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .border-top {
+            height: 4px;
+            width: 100%;
+        }
+        .enterprise-border { background-color: #dc3545; }
+        .professional-border { background-color: #f0ad4e; }
+        .standard-border { background-color: #0275d8; }
+        .basic-border { background-color: #5cb85c; }
+
+        .card-header {
+            font-size: 12px;
+            font-weight: bold;
+            margin: 20px 0 10px;
+            letter-spacing: 1px;
+            color: #333;
+        }
+
+        .price {
+            font-size: 40px;
+            font-weight: bold;
+            color: #222;
+            margin: 10px 0 0 0;
+        }
+
+        .per-month {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+            font-size: 10px;
+            font-weight: bold;
+            color: #444;
+            line-height: 2.2;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .btn-enterprise {
+            background-color: #dc3545;
+        }
+        .btn-professional {
+            background-color: #f0ad4e;
+        }
+        .btn-standard {
+            background-color: #0275d8;
+        }
+        .btn-basic {
+            background-color: #5cb85c;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="pricing-container">
+
+        <div class="card">
+            <div class="border-top enterprise-border"></div>
+            <div class="card-header">ПІДПРИЄМНИЦЬКИЙ</div>
+            <div class="price">₴3000</div>
+            <div class="per-month">за місяць</div>
+            <ul class="features">
+                <li>10 ГБ дискового простору</li>
+                <li>100 ГБ пропускної здатності на місяць</li>
+                <li>20 електронних поштових скриньок</li>
+                <li>Необмежена кількість піддоменів</li>
+            </ul>
+            <a href="#" class="btn btn-enterprise">ОФОРМИТИ</a>
+        </div>
+
+        <div class="card">
+            <div class="border-top professional-border"></div>
+            <div class="card-header">ПРОФЕСІЙНИЙ</div>
+            <div class="price">₴1300</div>
+            <div class="per-month">за місяць</div>
+            <ul class="features">
+                <li>5 ГБ дискового простору</li>
+                <li>60 ГБ пропускної здатності на місяць</li>
+                <li>10 електронних поштових скриньок</li>
+                <li>Необмежена кількість піддоменів</li>
+            </ul>
+            <a href="#" class="btn btn-professional">ОФОРМИТИ</a>
+        </div>
+
+        <div class="card">
+            <div class="border-top standard-border"></div>
+            <div class="card-header">ЗВИЧАЙНИЙ</div>
+            <div class="price">₴800</div>
+            <div class="per-month">за місяць</div>
+            <ul class="features">
+                <li>3 ГБ дискового простору</li>
+                <li>30 ГБ пропускної здатності на місяць</li>
+                <li>5 електронних поштових скриньок</li>
+                <li>Необмежена кількість піддоменів</li>
+            </ul>
+            <a href="#" class="btn btn-standard">ОФОРМИТИ</a>
+        </div>
+
+        <div class="card">
+            <div class="border-top basic-border"></div>
+            <div class="card-header">БАЗОВИЙ</div>
+            <div class="price">₴400</div>
+            <div class="per-month">за місяць</div>
+            <ul class="features">
+                <li>1 ГБ дискового простору</li>
+                <li>10 ГБ пропускної здатності на місяць</li>
+                <li>2 електронних поштових скриньки</li>
+                <li>Необмежена кількість піддоменів</li>
+            </ul>
+            <a href="#" class="btn btn-basic">ОФОРМИТИ</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
