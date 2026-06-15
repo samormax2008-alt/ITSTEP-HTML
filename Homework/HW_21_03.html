@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт "Lorem"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #cccccc;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3e3e3e;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        .header-container {
+            min-width: 600px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 12px;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        .main-container {
+            min-width: 600px;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            gap: 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        article {
+            flex: 2;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 4px;
+        }
+
+        article h1 {
+            font-size: 20px;
+            margin: 0 0 5px 0;
+            color: #111;
+        }
+
+        .date {
+            font-size: 11px;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .banner-box {
+            background-color: #fbc02d;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .banner-box img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        article p {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #444;
+            text-align: justify;
+        }
+
+        aside {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .events-block, .quote-block {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .events-block h3 {
+            font-size: 14px;
+            margin: 0 0 15px 0;
+        }
+
+        .event-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            font-size: 11px;
+            color: #333;
+        }
+
+        .badge {
+            background-color: #d32f2f;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .quote-block {
+            font-style: italic;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+            border-left: 3px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">Дослідницький сайт "Lorem"</div>
+            <nav>
+                <a href="#">Новини</a>
+                <a href="#">Події</a>
+                <a href="#">Курси</a>
+                <a href="#">Робота</a>
+                <a href="#">Тести</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <article>
+            <h1>Що таке "Lorem Ipsum"?</h1>
+            <div class="date">30/05/2019 11:20</div>
+            <div class="banner-box">
+                <img src="https://websitesetup.org/wp-content/uploads/2014/02/HTML-ICONS-34.png" alt="HTML Illustration">
+            </div>
+            <p>Lorem Ipsum — це фіктивний текст, який використовується у поліграфічній та верстальній галузі. Lorem Ipsum є стандартним фіктивним текстом у цій галузі ще з 1500-х років, коли невідомий друкар взяв набір літер і перемішав їх, щоб створити зразок шрифтів. Він не тільки пережив п’ять століть, а й перехід до електронного верстання, залишившись практично незмінним.</p>
+        </article>
+
+        <aside>
+            <div class="events-block">
+                <h3>Події</h3>
+                <div class="event-item">
+                    <div class="badge">7</div>
+                    <span>Donec ut nisi ullamcorper, ultrices neque accumsan. (Дослівно: "Доти, доки не зникнуть ні улламкорпер, ні ультріси, ні аккумсан.")</span>
+                </div>
+                <div class="event-item">
+                    <div class="badge">19</div>
+                    <span>Vivamus fringilla ligula eu nunc tincidunt. (Дослівно: "Давай жити, маленький голубчику, тепер, коли завіса вже на місці.")</span>
+                </div>
+                <div class="event-item">
+                    <div class="badge">27</div>
+                    <span>Quisque vel quam fermentum velit luctus. (Дослівно: "Хто б чи що б вони не обрали собі як привід для смутку.")</span>
+                </div>
+            </div>
+
+            <div class="quote-block">
+                "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." (Дослівно: Немає й такого, хто прагнув би самого болю, бо це ж біль, щоб його пережити й відчути...)
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
