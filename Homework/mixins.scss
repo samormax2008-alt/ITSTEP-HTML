@@ -1,0 +1,14 @@
+@mixin flex-container($direction: row, $justify: center, $align: center, $gap: 0px) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin glass-effect($bg-color: rgba(255, 255, 255, 0.2), $blur: 10px) {
+  background: $bg-color;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}

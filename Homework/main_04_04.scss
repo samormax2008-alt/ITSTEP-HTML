@@ -1,0 +1,13 @@
+@import 'variables';
+@import 'mixins';
+@import 'buttons';
+@import 'cards';
+
+body {
+  background-color: #f4f6f7;
+  @include flex-container(row, center, center, $spacer * 2);
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  flex-wrap: wrap;
+}

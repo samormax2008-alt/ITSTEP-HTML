@@ -1,0 +1,47 @@
+.btn {
+  display: inline-block;
+  padding: ($spacer * 0.6) ($spacer * 1.5);
+  font-family: $font-main;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: $border-radius - 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.btn-buy {
+  @extend .btn;
+  background-color: $success;
+  color: $white;
+
+  &:hover {
+    background-color: darken($success, 10%);
+  }
+}
+
+.btn-cancel {
+  @extend .btn;
+  background-color: $danger;
+  color: $white;
+
+  &:hover {
+    background-color: darken($danger, 10%);
+  }
+}
+
+.btn-info {
+  @extend .btn;
+  background-color: $primary;
+  color: $white;
+
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
+}
