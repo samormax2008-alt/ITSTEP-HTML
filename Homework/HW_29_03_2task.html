@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Демонстрація Елементів Введення</title>
+    <link rel="stylesheet" href="task2_29_03.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+
+<div class="forms-demo-container">
+
+    <h3>Введіть форму</h3>
+    <div class="form-row">
+        <input type="text" class="lib-input" placeholder="Введіть текст...">
+        <input type="text" class="lib-input input-valid" value="Правильний текст">
+        <input type="text" class="lib-input input-invalid" value="Неправильний текст">
+    </div>
+
+    <h3>Підписки</h3>
+    <div class="form-row">
+        <label class="lib-checkbox-label">
+            <input type="checkbox" class="lib-checkbox cb-green" checked>
+            Підписатись
+        </label>
+        <label class="lib-checkbox-label">
+            <input type="checkbox" class="lib-checkbox cb-pink" checked>
+            Підписатись
+        </label>
+    </div>
+
+    <h3>Оберіть стать</h3>
+    <div class="form-row">
+        <span style="font-size: 14px; color: #666;">Стать:</span>
+        <label class="lib-radio-label">
+            <input type="radio" name="gender" class="lib-radio" checked>
+            М
+        </label>
+        <label class="lib-radio-label">
+            <input type="radio" name="gender" class="lib-radio">
+            Ж
+        </label>
+    </div>
+
+    <h3>Кнопки</h3>
+    <div class="form-row" style="gap: 10px;">
+        <button class="lib-btn btn-success">Active</button>
+        <button class="lib-btn btn-success mock-hover">Hover</button>
+        <button class="lib-btn btn-danger">Danger</button>
+        <button class="lib-btn btn-danger mock-hover">Hover</button>
+        <button class="lib-btn btn-disabled" disabled>Disabled</button>
+        <button class="lib-btn-circle circle-plus">+</button>
+        <button class="lib-btn-circle circle-minus">-</button>
+    </div>
+
+    <h3>Поле для вводу</h3>
+    <div class="form-row">
+        <textarea class="lib-textarea" placeholder="Введіть текст..."></textarea>
+    </div>
+
+</div>
+
+</body>
+</html>

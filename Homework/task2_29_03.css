@@ -1,0 +1,239 @@
+.forms-demo-container {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 30px;
+    width: 600px;
+    border-radius: 4px;
+    color: #333;
+}
+
+.forms-demo-container h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.lib-input {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px;
+}
+
+.lib-input:focus {
+    border-color: #666;
+}
+
+.lib-input.input-valid {
+    border-color: #28a745;
+    color: #28a745;
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2328a745'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+/* Некоректні дані (Invalid) */
+.lib-input.input-invalid {
+    border-color: #dc3545;
+    background-color: #fff5f6;
+    color: #dc3545;
+    padding-right: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc3545'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+}
+
+.lib-input::placeholder {
+    color: #ccc;
+}
+
+
+/* --- 2. Чекбокси (Перемикачі / Світчі) --- */
+.lib-checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    gap: 8px;
+    user-select: none;
+}
+
+.lib-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 44px;
+    height: 22px;
+    background-color: #ccc;
+    border-radius: 11px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    outline: none;
+}
+
+/* Стан увімкненого чекбоксу (Зелений та Рожевий варіанти з макета) */
+.lib-checkbox.cb-green:checked {
+    background-color: #28a745;
+}
+
+.lib-checkbox.cb-pink:checked {
+    background-color: #e84a5f;
+}
+
+/* Кружечок всередині світча */
+.lib-checkbox::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+.lib-checkbox:checked::before {
+    transform: translateX(22px);
+}
+
+
+/* --- 3. Радіокнопки (Radio buttons) --- */
+.lib-radio-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    gap: 6px;
+    user-select: none;
+}
+
+.lib-radio {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    transition: border-color 0.2s ease;
+}
+
+.lib-radio:checked {
+    border-color: #28a745;
+}
+
+/* Крапка всередині радіокнопки при виборі */
+.lib-radio::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #28a745;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+.lib-radio:checked::before {
+    transform: scale(1);
+}
+
+
+/* --- 4. Кнопки (Buttons) --- */
+.lib-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Зелена кнопка (Active / Hover) */
+.lib-btn.btn-success {
+    background-color: #28a745;
+}
+.lib-btn.btn-success:hover, .lib-btn.btn-success.mock-hover {
+    background-color: #1e7e34;
+}
+
+/* Червона кнопка (Danger / Hover) */
+.lib-btn.btn-danger {
+    background-color: #e84a5f;
+}
+.lib-btn.btn-danger:hover, .lib-btn.btn-danger.mock-hover {
+    background-color: #841b2d;
+}
+
+/* Неактивна кнопка (Disabled) */
+.lib-btn:disabled, .lib-btn.btn-disabled {
+    background-color: #888888 !important;
+    color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Круглі кнопки з іконками (+ / -) */
+.lib-btn-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.lib-btn-circle.circle-plus {
+    background-color: #28a745;
+}
+.lib-btn-circle.circle-minus {
+    background-color: #e84a5f;
+}
+
+
+/* --- 5. Текстова область (Textarea) --- */
+.lib-textarea {
+    width: 100%;
+    max-width: 450px;
+    height: 100px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    outline: none;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.lib-textarea:focus {
+    border-color: #666;
+}
+
+.lib-textarea::placeholder {
+    color: #ccc;
+}

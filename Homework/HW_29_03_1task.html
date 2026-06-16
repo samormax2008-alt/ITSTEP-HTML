@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інформація з кредитної картки</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .payment-card {
+            background-color: #92c9c9;
+            width: 650px;
+            height: 380px;
+            border-radius: 10px;
+            display: flex;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .form-section {
+            flex: 1;
+            padding: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ribbon {
+            background-color: #e27d32;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 12px 25px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 85%;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .form-content {
+            margin-top: 85px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            color: #5a8e8e;
+            margin-bottom: 5px;
+            text-transform: capitalize;
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #6c9f9f;
+            padding: 8px 0;
+            font-size: 14px;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input::placeholder {
+            color: #7babae;
+        }
+
+        input:focus {
+            border-bottom-color: #4a7d7d;
+        }
+
+        .graphic-section {
+            width: 220px;
+            position: relative;
+            background-color: #92c9c9;
+            overflow: hidden;
+        }
+
+        .planet {
+            position: absolute;
+            bottom: -60px;
+            right: -60px;
+            width: 250px;
+            height: 250px;
+            background-color: #426466;
+            border-radius: 50%;
+        }
+        
+        .planet-light {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 190px;
+            height: 190px;
+            background-color: #557c7e;
+            border-radius: 50%;
+        }
+
+        .flag {
+            position: absolute;
+            bottom: 50px;
+            right: 40px;
+            width: 4px;
+            height: 50px;
+            background-color: #e27d32;
+        }
+
+        .flag::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 18px;
+            background-color: #e27d32;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .star {
+            position: absolute;
+            color: #fcd53f;
+            font-size: 12px;
+        }
+        .star1 { top: 120px; right: 150px; }
+        .star2 { top: 190px; right: 90px; font-size: 16px; }
+        .star3 { bottom: 60px; left: 30px; }
+        .circle-decor {
+            position: absolute;
+            bottom: 90px;
+            left: 40px;
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="payment-card">
+    <div class="form-section">
+        <div class="ribbon">ІНФОРМАЦІЯ З КРЕДИТНОЇ КАРТКИ</div>
+        
+        <div class="form-content">
+            <div class="input-group">
+                <label>Номер картки</label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+            </div>
+            
+            <div class="input-group">
+                <label>Ім'я картки</label>
+                <input type="text" placeholder="Name Surname">
+            </div>
+            
+            <div class="row">
+                <div class="input-group" style="flex: 1.2;">
+                    <label>Термін</label>
+                    <div class="row" style="gap: 15px;">
+                        <input type="text" placeholder="02">
+                        <input type="text" placeholder="2017">
+                    </div>
+                </div>
+                <div class="input-group" style="flex: 0.8;">
+                    <label>CVV</label>
+                    <input type="password" placeholder="***">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="graphic-section">
+        <div class="planet"></div>
+        <div class="planet-light"></div>
+        <div class="flag"></div>
+        <div class="star star1">★</div>
+        <div class="star star2">★</div>
+        <div class="star star3">★</div>
+        <div class="circle-decor"></div>
+    </div>
+</div>
+
+</body>
+</html>
