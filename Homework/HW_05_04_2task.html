@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДОШКА ОГОЛОШЕНЬ - Результати пошуку</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        .search-container {
+            background-color: #e9ecef;
+            border-radius: 6px;
+        }
+        .ad-image-wrapper {
+            width: 120px;
+            height: 120px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ad-image-wrapper img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+        .footer-links li {
+            margin-bottom: 5px;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #6c757d;
+            font-size: 12px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="border-bottom py-3 mb-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="text-dark text-decoration-none d-flex align-items-center">
+                <i class="bi bi-megaphone fs-3 me-2 border border-2 border-dark p-1 rounded"></i>
+                <span class="fs-5 fw-bold">ДОШКА ОГОЛОШЕНЬ</span>
+            </a>
+            
+            <div class="d-flex align-items-center">
+                <button class="btn btn-warning btn-sm fw-bold px-3 me-4 text-dark">
+                    <i class="bi bi-plus-lg"></i> Створити нове оголошення
+                </button>
+                <a href="#" class="text-decoration-none d-flex align-items-center">
+                    <img src="https://media.discordapp.net/attachments/1455524817187897427/1487813361679863908/account.png?ex=6a31ff6b&is=6a30adeb&hm=411fac93620c073b0fa166a0e1baf189aa56e8e20fb5d165116efc6aaea0a4b6&=&format=webp&quality=lossless&width=320&height=320" alt="Profile" width="30" height="30" class="me-2">
+                    <span class="text-primary text-decoration-underline small">Мій профіль</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mb-5">
+        
+        <div class="search-container p-2 mb-4">
+            <form class="row g-2">
+                <div class="col-md-5">
+                    <div class="input-group input-group-sm h-100">
+                        <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="Що вам потрібно?" value="Шафа">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group input-group-sm h-100">
+                        <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-geo-alt"></i></span>
+                        <input type="text" class="form-control border-start-0 ps-0" placeholder="Будь-яка область">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select form-select-sm h-100 text-muted">
+                        <option selected>Дім & Город</option>
+                        <option value="1">Електроніка</option>
+                        <option value="2">Мода</option>
+                        <option value="3">Автомобілі</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                
+                <div class="card mb-3 shadow-sm border-light">
+                    <div class="card-body p-3 d-flex flex-column flex-md-row align-items-md-center">
+                        <div class="ad-image-wrapper rounded me-md-4 mb-3 mb-md-0 flex-shrink-0">
+                            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516419934467522621/furniture_1.png?ex=6a32939e&is=6a31421e&hm=afe153611e4d6f7a27d9f691654b0ef72811cba14c7ea7bef787ac43964feef9&=&format=webp&quality=lossless&width=320&height=320" alt="Wardrobe">
+                        </div>
+                        <div class="flex-grow-1 d-flex flex-column h-100 justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <a href="#" class="h6 text-primary text-decoration-none fw-bold mb-0">Італійська шафа з дерева</a>
+                                <span class="fs-5 text-secondary">₴5400</span>
+                            </div>
+                            <div class="text-muted small mt-auto">
+                                <span class="me-3"><i class="bi bi-geo-alt"></i> Одеса, Хаджибейський</span>
+                                <span><i class="bi bi-clock"></i> Сьогодні в 10:45</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 shadow-sm border-light">
+                    <div class="card-body p-3 d-flex flex-column flex-md-row align-items-md-center">
+                        <div class="ad-image-wrapper rounded me-md-4 mb-3 mb-md-0 flex-shrink-0">
+                            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516419987018092624/furniture_3.png?ex=6a3293aa&is=6a31422a&hm=ff52d6496a6119ee943f936924d31552b88ee217bb5ffb27d28d533c3f094233&=&format=webp&quality=lossless&width=160&height=160" alt="Wardrobe">
+                        </div>
+                        <div class="flex-grow-1 d-flex flex-column h-100 justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <a href="#" class="h6 text-primary text-decoration-none fw-bold mb-0">Б/У шафа</a>
+                                <span class="fs-5 text-secondary">2250₴</span>
+                            </div>
+                            <div class="text-muted small mt-auto">
+                                <span class="me-3"><i class="bi bi-geo-alt"></i> Івано-Франківськ, Верховинський</span>
+                                <span><i class="bi bi-clock"></i> Сьогодні в 9:04</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 shadow-sm border-light">
+                    <div class="card-body p-3 d-flex flex-column flex-md-row align-items-md-center">
+                        <div class="ad-image-wrapper rounded me-md-4 mb-3 mb-md-0 flex-shrink-0">
+                            <img src="https://media.discordapp.net/attachments/1455524817187897427/1516419973499588628/furniture_2.png?ex=6a3293a7&is=6a314227&hm=ec3853175df1f1e4fae6da52284bae76f79690a2389309296610201c1daa0eef&=&format=webp&quality=lossless&width=160&height=160" alt="Wardrobe">
+                        </div>
+                        <div class="flex-grow-1 d-flex flex-column h-100 justify-content-between">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <a href="#" class="h6 text-primary text-decoration-none fw-bold mb-0">Шафа "Хельга" з Германії</a>
+                                <span class="fs-5 text-secondary">70$</span>
+                            </div>
+                            <div class="text-muted small mt-auto">
+                                <span class="me-3"><i class="bi bi-geo-alt"></i>Київ, Шевченківський</span>
+                                <span><i class="bi bi-clock"></i> Сьогодні в 8:23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-top py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 d-flex justify-content-center align-items-start mb-4 mb-md-0">
+                    <div class="border border-2 border-dark rounded p-2">
+                        <i class="bi bi-megaphone fs-2 text-dark"></i>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Мобільний додаток</a></li>
+                        <li><a href="#">Платні послуги</a></li>
+                        <li><a href="#">Реклама на веб-сайті</a></li>
+                        <li><a href="#">Для преси</a></li>
+                        <li><a href="#">Допомога та відгуки</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Блог ДОШКИ ОГОЛОШЕНЬ</a></li>
+                        <li><a href="#">Правила техніки безпеки</a></li>
+                        <li><a href="#">Як продавати та купувати?</a></li>
+                        <li><a href="#">Умови використання</a></li>
+                        <li><a href="#">Партнери</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">Робота в ДОШЦІ ОГОЛОШЕНЬ</a></li>
+                        <li><a href="#">Популярні запити</a></li>
+                        <li><a href="#">Мапа регіонів</a></li>
+                        <li><a href="#">Налаштування реклами</a></li>
+                        <li><a href="#">План сайту</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
