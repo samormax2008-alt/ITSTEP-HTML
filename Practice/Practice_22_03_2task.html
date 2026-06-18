@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стаття та меню</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            gap: 30px;
+        }
+
+        .article-content {
+            flex: 3;
+            background-color: transparent;
+        }
+
+        .article-content h2 { color: #000; font-size: 20px; }
+        .article-content p { font-size: 14px; color: #444; line-height: 1.5; text-align: justify; }
+
+        .sidebar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-block {
+            background-color: #b3c6df;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .menu-block-header {
+            background-color: #3b5998;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-list li {
+            padding: 10px 15px;
+            border-bottom: 1px solid #9eb3d4;
+            font-size: 13px;
+            color: #333;
+        }
+        .menu-list li:last-child { border-bottom: none; }
+
+        @media (min-width: 601px) and (max-width: 800px) {
+            .wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                flex-direction: row;
+            }
+            .menu-block {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="article-content">
+            <h2>Введення</h2>
+            <p>Aenean dictum elit sapien, et tempor leo malesuada eget. Praesent sed metus laoreet lacus suscipit auctor in id turpis. Nullam a sapien quis urna tincidunt hendrerit. Nulla consectetur varius diam, et tincidunt velit ullamcorper ac. Sed rhoncus tempus tortor, at ornare nisi gravida at. Duis purus urna, tempor non posuere sed, ultrices ut tortor. Nullam pellentesque mi ut vehicula sagittis. In vel luctus tortor.</p>
+            
+            <h2>Додаткова інформація</h2>
+            <p>Duis sed pharetra odio. Donec luctus posuere nibh, eget posuere nisl varius vel. Maecenas urna ante, facilisis id libero ut, vestibulum tristique lacus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque elit massa, dapibus et metus nec, lacinia lacinia diam. Aliquam id efficitur purus. Sed facilisis dolor ac enim ornare pretium. Nulla fermentum nisi eget ligula condimentum, ut dictum felis faucibus. Suspendisse urna purus, pretium sit amet vehicula nec, ullamcorper non tortor.</p>
+        </div>
+
+        <div class="sidebar">
+            <div class="menu-block">
+                <div class="menu-block-header">Дії</div>
+                <ul class="menu-list">
+                    <li>Integer ut magna cursus eros</li>
+                    <li>Fusce imperdiet sapien a sem</li>
+                    <li>Sed ac ligula in neque tincidunt</li>
+                </ul>
+            </div>
+
+            <div class="menu-block">
+                <div class="menu-block-header">Плани</div>
+                <ul class="menu-list">
+                    <li>Morbi at diam suscipit mauris</li>
+                    <li>Donec vel odio malesuada</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

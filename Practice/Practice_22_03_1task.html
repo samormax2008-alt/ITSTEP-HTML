@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завантаження відео</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .upload-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .image-block {
+            background-color: #b0b0b0;
+            width: 150px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: #555;
+            flex-shrink: 0;
+        }
+
+        .info-block {
+            flex-grow: 1;
+        }
+
+        .progress-bar-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            height: 30px;
+            margin-bottom: 10px;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+
+        .progress-fill {
+            background-color: #d0def0;
+            width: 40%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .progress-text-left { margin-left: 10px; z-index: 2; font-size: 12px; color: #333; }
+        .progress-text-right { margin-right: 10px; z-index: 2; font-size: 12px; color: #666; }
+
+        .video-title { font-weight: bold; margin: 10px 0 5px; font-size: 14px;}
+        .video-desc { font-size: 11px; color: #666; }
+
+        .btn-block {
+            flex-shrink: 0;
+        }
+
+        .done-btn {
+            background-color: #3b5998;
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .upload-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .image-block {
+                width: 100%;
+                height: 150px;
+            }
+            .done-btn {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="upload-container">
+        <div class="image-block">
+            ↻
+        </div>
+
+        <div class="info-block">
+            <div class="progress-bar-wrapper">
+                <div class="progress-fill"></div>
+                <span class="progress-text-left">ЗАВАНТАЖЕНО: 40%</span>
+                <span class="progress-text-right">Залишилось: приблизно 23 хвилини</span>
+            </div>
+            <div class="video-title">Назва відео</div>
+            <div class="video-desc">Ваше відео завантажується. Будь ласка, не закривайте цю сторінку, доки завантаження не завершиться.</div>
+        </div>
+
+        <div class="btn-block">
+            <button class="done-btn">DONE</button>
+        </div>
+    </div>
+
+</body>
+</html>
