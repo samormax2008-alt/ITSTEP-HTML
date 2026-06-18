@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 2 - Жива іконка</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 50px;
+        }
+
+        .background-box {
+            background-color: #f0f0f0;
+            padding: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+        }
+
+        .icon {
+            width: 150px;
+            filter: grayscale(100%);
+            transform: scale(1);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon:hover {
+            filter: grayscale(0%);
+            transform: scale(1.5);
+            transition: transform 5s linear, filter 5s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="background-box">
+    <div class="icon">
+        <img src="https://media.discordapp.net/attachments/1455524817187897427/1517102830744502364/favorites.png?ex=6a350f9d&is=6a33be1d&hm=05d31fee41a3f367cd90d1fcce1d2796dfff698b827483aa5fcab8430fa0d104&=&format=webp&quality=lossless&width=640&height=640">
+    </div>
+</div>
+</body>
+</html>
