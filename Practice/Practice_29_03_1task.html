@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e65c40;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background-color: #f1f1f1;
+            padding: 40px 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .user-icon {
+            background-color: #fff;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 3px solid #f1f1f1;
+        }
+
+        .login-card h2 {
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .login-card input[type="text"],
+        .login-card input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .btn-login {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        .btn-login:hover { background-color: #218838; }
+
+        .forgot-link {
+            display: block;
+            color: #d9534f;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 30px;
+        }
+        .forgot-link:hover { text-decoration: underline; }
+
+        .divider {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+
+        .social-logins {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-social {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-fb { background-color: #3b5998; }
+        .btn-tw { background-color: #1da1f2; }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="user-icon">👤</div>
+        <h2>Авторизація користувача</h2>
+        
+        <form>
+            <input type="text" placeholder="Ім'я користувача" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit" class="btn-login">Авторизуватися</button>
+        </form>
+        
+        <a href="#" class="forgot-link">Забули пароль?</a>
+        
+        <div class="divider">... або авторизуватися за:</div>
+        
+        <div class="social-logins">
+            <button class="btn-social btn-fb">Facebook</button>
+            <button class="btn-social btn-tw">Twitter</button>
+        </div>
+    </div>
+
+</body>
+</html>

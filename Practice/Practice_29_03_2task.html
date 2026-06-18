@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: rgba(0, 50, 50, 0.6);
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px); 
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .form-container p {
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .form-group label {
+            width: 150px;
+            font-size: 14px;
+            padding-top: 8px;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 10px;
+            border-radius: 2px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 10px 30px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+            float: right;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: white;
+            color: #333;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container clearfix">
+        <h2>Форма заповнення</h2>
+        <p>Будь ласка, вкажіть свої дані, і ми негайно відправимо ваше звернення.</p>
+        
+        <form>
+            <div class="form-group">
+                <label>Ваше ім'я *</label>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Ваш e-mail *</label>
+                <div class="input-wrapper">
+                    <input type="email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Телефон *</label>
+                <div class="input-wrapper">
+                    <input type="text" placeholder="###" required style="flex: 1;">
+                    <input type="text" placeholder="###" required style="flex: 1;">
+                    <input type="text" placeholder="####" required style="flex: 2;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Тема звернення *</label>
+                <div class="input-wrapper">
+                    <select required>
+                        <option value="">Інше</option>
+                        <option value="support">Підтримка</option>
+                        <option value="sales">Продажі</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Звернення *</label>
+                <div class="input-wrapper">
+                    <textarea required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Підтвердити</button>
+        </form>
+    </div>
+
+</body>
+</html>
