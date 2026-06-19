@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивна таблиця часів англійської мови</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --bg-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-color: #eef5fc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+
+        .selector-group {
+            margin-bottom: 20px;
+        }
+
+        .selector-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            background-color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            border-color: var(--primary-color);
+            background-color: var(--accent-color);
+        }
+
+        .btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .result-card {
+            margin-top: 30px;
+            border-top: 2px solid #f0f0f0;
+            padding-top: 20px;
+        }
+
+        .info-row {
+            margin-bottom: 15px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #7f8c8d;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-value {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .formula-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 15px;
+        }
+
+        .formula-line {
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .formula-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .marker-badge {
+            display: inline-block;
+            background-color: #e1f5fe;
+            color: #0288d1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🇬🇧 Конструктор часів англійської мови</h1>
+
+    <div class="selector-group">
+        <span class="selector-label">1. Оберіть час (Time):</span>
+        <div class="btn-group" id="time-group">
+            <button class="btn active" data-value="present">Present</button>
+            <button class="btn" data-value="past">Past</button>
+            <button class="btn" data-value="future">Future</button>
+        </div>
+    </div>
+
+    <div class="selector-group">
+        <span class="selector-label">2. Оберіть аспект (Aspect):</span>
+        <div class="btn-group" id="aspect-group">
+            <button class="btn active" data-value="simple">Simple</button>
+            <button class="btn" data-value="progressive">Progressive</button>
+            <button class="btn" data-value="perfect">Perfect</button>
+            <button class="btn" data-value="perfect-progressive">Perfect Progressive</button>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="info-row">
+            <div class="info-label">Значення та запитання (Meaning & When?)</div>
+            <div class="info-value" id="meaning-text">Завантаження...</div>
+        </div>
+        
+        <div class="info-row">
+            <div class="info-label">Маркери часу (Period of time)</div>
+            <div class="info-value" id="markers-text">Завантаження...</div>
+        </div>
+
+        <div class="info-label">Структура речення (Grammar Structure)</div>
+        <div class="formula-box">
+            <div class="formula-line" id="formula-plus"></div>
+            <div class="formula-line" id="formula-question"></div>
+            <div class="formula-line" id="formula-minus"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const grammarData = {
+        "present": {
+            "simple": {
+                "meaning": "a common aspect | <b>When?</b>",
+                "markers": ["usually", "often", "always", "seldom", "every day (week, month, year)"],
+                "plus": "<b>+</b> V / Vs",
+                "question": "<b>?</b> do / does + V",
+                "minus": "<b>-</b> do / does + not + V"
+            },
+            "progressive": {
+                "meaning": "a process | <b>At what time?</b>",
+                "markers": ["now", "at the moment"],
+                "plus": "<b>+</b> am / is / are + Ving",
+                "question": "<b>?</b> inversion (am/is/are + S + Ving)",
+                "minus": "<b>-</b> am / is / are + not + Ving"
+            },
+            "perfect": {
+                "meaning": "priority | <b>By what time?</b>",
+                "markers": ["ever", "never", "just", "already", "not..yet", "by 3 p.m."],
+                "plus": "<b>+</b> have / has + Ved / V3",
+                "question": "<b>?</b> inversion (have/has + S + Ved/V3)",
+                "minus": "<b>-</b> have / has + not + Ved / V3"
+            },
+            "perfect-progressive": {
+                "meaning": "priority + process | <b>Since what time? How long?</b>",
+                "markers": ["since 3 p.m.", "for a long time", "for a month"],
+                "plus": "<b>+</b> have / has + been + Ving",
+                "question": "<b>?</b> inversion (have/has + S + been + Ving)",
+                "minus": "<b>-</b> have / has + not + been + Ving"
+            }
+        },
+        "past": {
+            "simple": {
+                "meaning": "a common aspect | <b>When?</b>",
+                "markers": ["yesterday", "last week (month, year)", "long ago"],
+                "plus": "<b>+</b> Ved / V2",
+                "question": "<b>?</b> did + V",
+                "minus": "<b>-</b> did + not + V"
+            },
+            "progressive": {
+                "meaning": "a process | <b>At what time?</b>",
+                "markers": ["yesterday at 3 p.m.", "yesterday from 6 till 7", "when you came"],
+                "plus": "<b>+</b> was / were + Ving",
+                "question": "<b>?</b> inversion (was/were + S + Ving)",
+                "minus": "<b>-</b> was / were + not + Ving"
+            },
+            "perfect": {
+                "meaning": "priority | <b>By what time?</b>",
+                "markers": ["yesterday by 3 p.m.", "before some time in the past"],
+                "plus": "<b>+</b> had + Ved / V3",
+                "question": "<b>?</b> inversion (had + S + Ved/V3)",
+                "minus": "<b>-</b> had + not + Ved / V3"
+            },
+            "perfect-progressive": {
+                "meaning": "priority + process | <b>Since what time? How long?</b>",
+                "markers": ["yesterday since 3 p.m.", "for some time in the past"],
+                "plus": "<b>+</b> had + been + Ving",
+                "question": "<b>?</b> inversion (had + S + been + Ving)",
+                "minus": "<b>-</b> had + not + been + Ving"
+            }
+        },
+        "future": {
+            "simple": {
+                "meaning": "a common aspect | <b>When?</b>",
+                "markers": ["tomorrow", "next week (month, year)"],
+                "plus": "<b>+</b> will + V",
+                "question": "<b>?</b> inversion (will + S + V)",
+                "minus": "<b>-</b> won't + V"
+            },
+            "progressive": {
+                "meaning": "a process | <b>At what time?</b>",
+                "markers": ["tomorrow at 3 p.m.", "tomorrow from 6 till 7", "when you come"],
+                "plus": "<b>+</b> will + be + Ving",
+                "question": "<b>?</b> inversion (will + S + be + Ving)",
+                "minus": "<b>-</b> won't + be + Ving"
+            },
+            "perfect": {
+                "meaning": "priority | <b>By what time?</b>",
+                "markers": ["tomorrow by 3 p.m.", "before some time in the future"],
+                "plus": "<b>+</b> will + have + Ved / V3",
+                "question": "<b>?</b> inversion (will + S + have + Ved/V3)",
+                "minus": "<b>-</b> won't + have + Ved / V3"
+            },
+            "perfect-progressive": {
+                "meaning": "priority + process | <b>Since what time? How long?</b>",
+                "markers": ["tomorrow since 3 p.m.", "for some time in the future"],
+                "plus": "<b>+</b> will + have + been + Ving",
+                "question": "<b>?</b> inversion (will + S + have + been + Ving)",
+                "minus": "<b>-</b> won't + have + been + Ving"
+            }
+        }
+    };
+
+    let currentTime = "present";
+    let currentAspect = "simple";
+
+    function updateCard() {
+        const data = grammarData[currentTime][currentAspect];
+        
+        document.getElementById("meaning-text").innerHTML = data.meaning;
+        
+        const markersContainer = document.getElementById("markers-text");
+        markersContainer.innerHTML = "";
+        data.markers.forEach(marker => {
+            const span = document.createElement("span");
+            span.className = "marker-badge";
+            span.textContent = marker;
+            markersContainer.appendChild(span);
+        });
+
+        document.getElementById("formula-plus").innerHTML = data.plus;
+        document.getElementById("formula-question").innerHTML = data.question;
+        document.getElementById("formula-minus").innerHTML = data.minus;
+    }
+    function setupGroup(groupId, callback) {
+        const container = document.getElementById(groupId);
+        const buttons = container.getElementsByClassName("btn");
+        
+        Array.from(buttons).forEach(btn => {
+            btn.addEventListener("click", function() {
+                Array.from(buttons).forEach(b => b.classList.remove("active"));
+                this.classList.add("active");
+                callback(this.getAttribute("data-value"));
+            });
+        });
+    }
+
+    setupGroup("time-group", (value) => {
+        currentTime = value;
+        updateCard();
+    });
+
+    setupGroup("aspect-group", (value) => {
+        currentAspect = value;
+        updateCard();
+    });
+
+    updateCard();
+</script>
+
+</body>
+</html>
