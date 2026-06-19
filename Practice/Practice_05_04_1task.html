@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДОШКА ОГОЛОШЕНЬ</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        .category-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .category-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+        }
+        .product-img-placeholder {
+            height: 180px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+        .heart-fav {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: white;
+            border-radius: 50%;
+            padding: 5px 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #dc3545;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="bi bi-lightning-charge-fill text-warning"></i>ДОШКА ОГОЛОШЕНЬ</a>
+            <button class="navbar-toggler" type="text/collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center gap-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="bi bi-house-door me-1"></i>ГОЛОВНА</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-chat-left-text me-1"></i>ПОВІДОМЛЕННЯ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-person me-1"></i>МІЙ ПРОФІЛЬ</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="btn btn-primary btn-sm px-3 fw-bold"><i class="bi bi-plus-circle me-1"></i>НОВЕ ОГОЛОШЕННЯ</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-white py-5 border-bottom shadow-sm">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="text-center mb-4 fw-bold">Знайдіть те, що шукаєте</h2>
+                    <form class="row g-2">
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search text-muted"></i></span>
+                                <input type="text" class="form-control border-start-0" placeholder="Що шукаєте?">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-geo-alt text-muted"></i></span>
+                                <input type="text" class="form-control border-start-0" placeholder="Уся Україна">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Пошук<i class="bi bi-arrow-right ms-1"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h4 class="fw-bold mb-4"><i class="bi bi-grid-3x3-gap-fill text-primary me-2"></i>Головні категорії</h4>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3 text-center">
+            
+            <div class="col">
+                <div class="card h-100 p-3 category-card border-0 shadow-sm">
+                    <div class="category-icon mb-2"><i class="bi bi-car-front"></i></div>
+                    <span class="fw-medium text-dark">Автомобілі</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 p-3 category-card border-0 shadow-sm">
+                    <div class="category-icon mb-2"><i class="bi bi-house-door"></i></div>
+                    <span class="fw-medium text-dark">Нерухомість</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 p-3 category-card border-0 shadow-sm">
+                    <div class="category-icon mb-2"><i class="bi bi-phone"></i></div>
+                    <span class="fw-medium text-dark">Електроніка</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 p-3 category-card border-0 shadow-sm">
+                    <div class="category-icon mb-2"><i class="bi bi-briefcase"></i></div>
+                    <span class="fw-medium text-dark">Робота</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 p-3 category-card border-0 shadow-sm">
+                    <div class="category-icon mb-2"><i class="bi bi-backpack"></i></div>
+                    <span class="fw-medium text-dark">Мода та стиль</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100 p-3 category-card border-0 shadow-sm">
+                    <div class="category-icon mb-2"><i class="bi bi-tools"></i></div>
+                    <span class="fw-medium text-dark">Все для ремонту</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h4 class="fw-bold mb-4"><i class="bi bi-clock-history text-primary me-2"></i>Свіжі оголошення</h4>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            
+            <div class="col">
+                <div class="card h-100 position-relative border-0 shadow-sm overflow-hidden">
+                    <span class="heart-fav"><i class="bi bi-heart"></i></span>
+                    <div class="product-img-placeholder">
+                        <i class="bi bi-image" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate fs-6 mb-1">iPhone 14 Pro Max 256GB Black</h5>
+                        <h6 class="text-primary fw-bold mb-3">28 500 грн</h6>
+                        <div class="d-flex justify-content-between text-muted" style="font-size: 0.8rem;">
+                            <span><i class="bi bi-geo-alt"></i> Київ</span>
+                            <span>Сьогодні, 12:40</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 position-relative border-0 shadow-sm overflow-hidden">
+                    <span class="heart-fav"><i class="bi bi-heart-fill"></i></span> <div class="product-img-placeholder">
+                        <i class="bi bi-image" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate fs-6 mb-1">Кросівки Nike Air Max Original</h5>
+                        <h6 class="text-primary fw-bold mb-3">3 200 грн</h6>
+                        <div class="d-flex justify-content-between text-muted" style="font-size: 0.8rem;">
+                            <span><i class="bi bi-geo-alt"></i> Львів</span>
+                            <span>Вчора, 18:15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 position-relative border-0 shadow-sm overflow-hidden">
+                    <span class="heart-fav"><i class="bi bi-heart"></i></span>
+                    <div class="product-img-placeholder">
+                        <i class="bi bi-image" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate fs-6 mb-1">Оренда 2-кімнатної квартири</h5>
+                        <h6 class="text-primary fw-bold mb-3">15 000 грн / міс.</h6>
+                        <div class="d-flex justify-content-between text-muted" style="font-size: 0.8rem;">
+                            <span><i class="bi bi-geo-alt"></i> Одеса</span>
+                            <span>15 черв</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100 position-relative border-0 shadow-sm overflow-hidden">
+                    <span class="heart-fav"><i class="bi bi-heart"></i></span>
+                    <div class="product-img-placeholder">
+                        <i class="bi bi-image" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate fs-6 mb-1">Велосипед Scott Aspect 940</h5>
+                        <h6 class="text-primary fw-bold mb-3">18 900 грн</h6>
+                        <div class="d-flex justify-content-between text-muted" style="font-size: 0.8rem;">
+                            <span><i class="bi bi-geo-alt"></i> Харків</span>
+                            <span>12 черв</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-4 pb-3 mt-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5 class="fw-bold"><i class="bi bi-lightning-charge-fill text-warning"></i> OLX_Clone</h5>
+                    <p class="small text-muted">Найкращий сервіс безкоштовних оголошень в Україні. Купуй та продавай легко разом з нами.</p>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Довідка</h6>
+                    <ul class="list-unstyled small text-muted">
+                        <li><a href="#" class="text-reset text-decoration-none">Як продавати безпечно</a></li>
+                        <li><a href="#" class="text-reset text-decoration-none">Правила сервісу</a></li>
+                        <li><a href="#" class="text-reset text-decoration-none">Карта сайту</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6>Ми в соцмережах</h6>
+                    <div class="d-flex gap-3 fs-5 mt-2">
+                        <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-secondary">
+            <div class="text-center small text-muted">
+                &copy; 2026 ДОШКА ОГОЛОШЕНЬ. Усі права захищено.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
