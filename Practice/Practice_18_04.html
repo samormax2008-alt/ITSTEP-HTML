@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компонент підсумків результатів</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+        body { 
+            font-family: 'Hanken Grotesk', sans-serif; 
+        }
+    </style>
+</head>
+<body class="bg-[#ecf2ff] min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white rounded-[2rem] shadow-[0_10px_30px_rgba(0,0,0,0.1)] flex flex-col md:flex-row max-w-[700px] w-full">
+
+        <div class="bg-gradient-to-b from-[#6743ff] to-[#312cee] text-white p-10 flex flex-col items-center text-center rounded-[2rem] w-full md:w-1/2">
+            <h3 class="text-[#c8c7ff] font-bold text-lg mb-6">Ваш результат</h3>
+            
+            <div class="w-40 h-40 rounded-full bg-gradient-to-b from-[#4d21c9] to-[#2521c900] flex flex-col items-center justify-center mb-6">
+                <span class="text-6xl font-extrabold mb-1">80</span>
+                <span class="text-[#c8c7ff] text-sm font-medium opacity-80">зі 100</span>
+            </div>
+
+            <h2 class="text-2xl font-bold mb-3">Гарно</h2>
+            <p class="text-[#c8c7ff] text-[15px] leading-relaxed font-medium">
+                Ви досягли більшого за 65% людей, які виконували цей тест.
+            </p>
+        </div>
+
+        <div class="p-10 flex flex-col w-full md:w-1/2 justify-between">
+            <h3 class="text-[#242142] font-bold text-xl mb-6">Короткий виклад</h3>
+
+            <div class="flex flex-col gap-4">
+                
+                <div class="flex items-center justify-between p-4 bg-[#ff5555]/10 rounded-xl">
+                    <div class="flex items-center gap-3 text-[#ff5555] font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        Реакція
+                    </div>
+                    <div class="font-bold text-[#242142]">
+                        82 <span class="text-gray-400 font-medium">/ 100</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 bg-[#ffb21e]/10 rounded-xl">
+                    <div class="flex items-center gap-3 text-[#ffb21e] font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Пам'ять
+                    </div>
+                    <div class="font-bold text-[#242142]">
+                        94 <span class="text-gray-400 font-medium">/ 100</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 bg-[#00bb8f]/10 rounded-xl">
+                    <div class="flex items-center gap-3 text-[#00bb8f] font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Розмовна здібність
+                    </div>
+                    <div class="font-bold text-[#242142]">
+                        64 <span class="text-gray-400 font-medium">/ 100</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between p-4 bg-[#1125d6]/10 rounded-xl">
+                    <div class="flex items-center gap-3 text-[#1125d6] font-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        Візуальна здібність
+                    </div>
+                    <div class="font-bold text-[#242142]">
+                        75 <span class="text-gray-400 font-medium">/ 100</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="mt-8 w-full bg-[#303b5a] text-white py-4 rounded-[2rem] font-bold hover:bg-gradient-to-b hover:from-[#6743ff] hover:to-[#312cee] transition-all duration-300">
+                Продовжити
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
