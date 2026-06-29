@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Графік відключень світла</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Контейнер для таблиці */
+        .schedule-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 24px;
+            max-width: 100%;
+            overflow-x: auto; /* Адаптивність для малих екранів */
+        }
+
+        /* Стилі таблиці */
+        .schedule-table {
+            border-collapse: collapse;
+            width: 100%;
+            min-width: 900px;
+        }
+
+        /* Заголовки рядків та стовпців */
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 14px;
+        }
+
+        /* Назва дня тижня */
+        .day-header {
+            font-weight: bold;
+            color: #1e293b;
+            text-align: left !important;
+            padding: 12px 16px;
+            width: 120px;
+        }
+
+        /* Підсвічування П'ятниці як на макеті */
+        .day-header.highlighted {
+            background-color: #ffea00;
+            color: #000000;
+        }
+
+        /* Вертикальні заголовки годин */
+        .hour-header {
+            padding: 10px 4px;
+            font-weight: bold;
+            color: #1e293b;
+            writing-mode: vertical-rl; /* Поворот тексту вертикально */
+            white-space: nowrap;
+            width: 30px;
+        }
+
+        /* Базові стилі для комірок стану */
+        .status-cell {
+            width: 32px;
+            height: 40px;
+            padding: 0;
+        }
+
+        /* Стан: Світло є (Білий) */
+        .status-yes {
+            background-color: #ffffff;
+        }
+
+        /* Стан: Можливо відключення (Світло-сірий) */
+        .status-maybe {
+            background-color: #f1f5f9;
+        }
+
+        /* Стан: Світла немає (Темно-сірий) */
+        .status-no {
+            background-color: #cbd5e1;
+        }
+
+        /* Стилі для SVG іконок всередині комірок */
+        .status-cell svg {
+            display: block;
+            margin: 0 auto;
+            width: 16px;
+            height: 16px;
+        }
+        .status-maybe svg {
+            color: #94a3b8; /* Світла іконка */
+        }
+        .status-no svg {
+            color: #334155; /* Темна іконка */
+        }
+
+        /* Легенда під таблицею */
+        .legend {
+            display: flex;
+            gap: 24px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .legend-box {
+            width: 32px;
+            height: 32px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="schedule-container">
+    <table class="schedule-table">
+        <thead>
+            <tr>
+                <th></th>
+                <script>
+                    for (let i = 0; i < 24; i++) {
+                        let hour = i < 10 ? '0' + i : i;
+                        document.write(`<th class="hour-header">${hour}:00</th>`);
+                    }
+                </script>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                const iconSrc = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                `;
+            </script>
+
+            <tr>
+                <td class="day-header">Понеділок</td>
+                <script>
+                    const mon = ['maybe','maybe','maybe','no','no','no','no','yes','yes','maybe','maybe','maybe','no','no','no','no','yes','yes','maybe','maybe','maybe','no','no','no'];
+                    mon.forEach(state => document.write(`<td class="status-cell status-${state}">${state !== 'yes' ? iconSrc : ''}</td>`));
+                </script>
+            </tr>
+
+            <tr>
+                <td class="day-header">Вівторок</td>
+                <script>
+                    const tue = ['no','yes','yes','yes','maybe','maybe','maybe','no','no','no','no','yes','yes','yes','maybe','maybe','maybe','no','no','no','no','yes','yes','yes'];
+                    tue.forEach(state => document.write(`<td class="status-cell status-${state}">${state !== 'yes' ? iconSrc : ''}</td>`));
+                </script>
+            </tr>
+
+            <tr>
+                <td class="day-header">Середа</td>
+                <script>
+                    const wed = ['no','no','no','no','yes','yes','maybe','maybe','maybe','no','no','no','no','yes','yes','maybe','maybe','maybe','no','no','no','no','yes','yes'];
+                    wed.forEach(state => document.write(`<td class="status-cell status-${state}">${state !== 'yes' ? iconSrc : ''}</td>`));
+                </script>
+            </tr>
+
+            <tr>
+                <td class="day-header">Четвер</td>
+                <script>
+                    const thu = ['maybe','maybe','maybe','no','no','no','yes','yes','yes','maybe','maybe','maybe','no','no','no','yes','yes','yes','maybe','maybe','maybe','no','no','no'];
+                    thu.forEach(state => document.write(`<td class="status-cell status-${state}">${state !== 'yes' ? iconSrc : ''}</td>`));
+                </script>
+            </tr>
+
+            <tr>
+                <td class="day-header highlighted">П'ятниця</td>
+                <script>
+                    const fri = ['no','yes','yes','yes','maybe','maybe','maybe','no','no','no','yes','yes','yes','maybe','maybe','maybe','no','no','no','no','maybe','maybe','maybe','yes'];
+                    fri.forEach(state => document.write(`<td class="status-cell status-${state}">${state !== 'yes' ? iconSrc : ''}</td>`));
+                </script>
+            </tr>
+
+            <tr>
+                <td class="day-header">Субота</td>
+                <script>
+                    const sat = ['no','no','no','no','yes','yes','yes','maybe','maybe','maybe','no','no','no','yes','yes','yes','maybe','maybe','maybe','no','no','no','maybe','maybe'];
+                    sat.forEach(state => document.write(`<td class="status-cell status-${state}">${state !== 'yes' ? iconSrc : ''}</td>`));
+                </script>
+            </tr>
+
+            <tr>
+                <td class="day-header">Неділя</td>
+                <script>
+                    const sun = ['maybe','maybe','no','no','no','no','yes','yes','yes','maybe','maybe','maybe','no','no','no','no','yes','yes','yes','no','no','no','no','no'];
+                    sun.forEach(state => document.write(`<td class="status-cell status-${state}">${state !== 'yes' ? iconSrc : ''}</td>`));
+                </script>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-box status-yes"></div>
+            <span>Світло є</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box status-maybe">
+                <script>document.write(iconSrc);</script>
+            </div>
+            <span>Можливо відключення</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box status-no">
+                <script>document.write(iconSrc);</script>
+            </div>
+            <span>Світла немає</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
